@@ -1,3 +1,6 @@
+Just ignore whats down there this will be a good pomodoro website at least I hope and I will add better readme text (I hope).
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
