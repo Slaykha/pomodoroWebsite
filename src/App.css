@@ -1,5 +1,5 @@
 *{
-  background-color: rgb(96, 102, 105);
+  background-color: #282828;
 }
 
 .clock{
@@ -17,22 +17,22 @@ h1{
 }
 
 .breakClock{
-  color: rgb(173,255,47);
+  font-size: 86px;
+  color: #6ABEDB;
 }
 
 .workClock{
-  color: rgb(135,206,250);
+  font-size: 86px;
+  color: #A62139;
 }
 
 .topS{
-  color: brown;
+  color: #607625;
 }
 
-#spButton{
-  width: 15vh;
-  height: 5vh;
-  color: brown;
-  font-size: 16px;
-  font-weight: 600;
-  background-color: cornsilk;
+.controlPanel{
+  display: flex;
+  gap: 3%;
+  justify-content: center;
+  align-items: center;
 }

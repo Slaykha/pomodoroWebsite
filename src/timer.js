@@ -1,11 +1,12 @@
 import React, { useState, useRef, useEffect } from "react";
+import { Icon } from '@iconify/react';
 
 const Timer = () =>{
     var deneme = 50
-    const [workTime, setWorkTime] = useState(5);
+    const [workTime, setWorkTime] = useState(1200);
     const [breakTime, setBreakTime] = useState(300);
     const [seconds, setSeconds] = useState(workTime);
-    const [isPause, setIsPause] = useState(false);
+    const [isPause, setIsPause] = useState(true);
     const [isBreakTime, setIsBreakTime] = useState(false);
     
     var isBreakTimeRef = useRef(isBreakTime);
@@ -23,6 +24,11 @@ const Timer = () =>{
     function breakT(){
         isBreakTimeRef.current = !isBreakTime;
         setIsBreakTime(isBreakTimeRef.current);
+    }
+
+    function setPause(pause){
+        isPauseRef.current = pause;
+        setIsPause(isPauseRef.current);
     }
 
     function secondsEdit(number){
@@ -62,17 +68,15 @@ const Timer = () =>{
         <div>
             <h1 className="topS">{isPause ? "Paused" : isBreakTime ? "Break Time" : "Work Time"}</h1>
             <div>
-                <h1 className={isBreakTime ? "breakClock" : "workClock"}>{mins} : {secs}</h1>
+                <h1 className={isBreakTime ? "breakClock" : "workClock"}>{mins.toLocaleString('en-US', {minimumIntegerDigits: 2,useGrouping: false})} : {secs.toLocaleString('en-US', {minimumIntegerDigits: 2,useGrouping: false})}</h1>
             </div>
-            <div>   
-                <button 
-                    id="spButton" 
-                    onClick={() => {isPauseRef.current = !isPause; setIsPause(isPauseRef.current)}}
-                >
-                    {isPause ? "Start" : "Pause"}
-                </button>
+            <div className="controlPanel">   
+                <Icon onClick={() => {setPause(true); secondsEdit(workTime); setIsBreakTime(false)}} icon="carbon:reset" color="#E3AFBC" width="60" height="60" />
+                {isPause ? 
+                <Icon  onClick={() => {isPauseRef.current = !isPause; setIsPause(isPauseRef.current)}} icon="carbon:play-filled-alt" color="#607625" width="60" height="60" /> 
+                : <Icon  onClick={() => {isPauseRef.current = !isPause; setIsPause(isPauseRef.current)}} icon="carbon:pause-filled" color="#607625" width="60" height="60" />}
+                <Icon onClick={()=>breakT()} icon="carbon:skip-forward-filled" color="#E3AFBC" width="60" height="60" />
             </div>
-            
         </div>
     );
 }
