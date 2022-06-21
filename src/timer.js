@@ -71,11 +71,11 @@ const Timer = () =>{
                 <h1 className={isBreakTime ? "breakClock" : "workClock"}>{mins.toLocaleString('en-US', {minimumIntegerDigits: 2,useGrouping: false})} : {secs.toLocaleString('en-US', {minimumIntegerDigits: 2,useGrouping: false})}</h1>
             </div>
             <div className="controlPanel">   
-                <Icon onClick={() => {setPause(true); secondsEdit(workTime); setIsBreakTime(false)}} icon="carbon:reset" color="#E3AFBC" width="60" height="60" />
+                <Icon onClick={() => {setPause(true); secondsEdit(workTime); setIsBreakTime(false)}} icon="carbon:reset" color="#607625" width="60" height="60" />
                 {isPause ? 
                 <Icon  onClick={() => {isPauseRef.current = !isPause; setIsPause(isPauseRef.current)}} icon="carbon:play-filled-alt" color="#607625" width="60" height="60" /> 
                 : <Icon  onClick={() => {isPauseRef.current = !isPause; setIsPause(isPauseRef.current)}} icon="carbon:pause-filled" color="#607625" width="60" height="60" />}
-                <Icon onClick={()=>breakT()} icon="carbon:skip-forward-filled" color="#E3AFBC" width="60" height="60" />
+                <Icon onClick={()=>breakT()} icon="carbon:skip-forward-filled" color="#607625" width="60" height="60" />
             </div>
         </div>
     );
