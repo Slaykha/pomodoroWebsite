@@ -3,7 +3,10 @@
 }
 
 .clock{
+  text-align: center;
+}
 
+.settings{
   text-align: center;
 }
 
@@ -14,20 +17,56 @@ h1{
   font-family: 'Bebas Neue', cursive;
   font-family: 'Orbitron', sans-serif;
   font-family: 'Quantico', sans-serif;
+  user-select: none;
+
 }
 
 .breakClock{
+  margin: 2%;
+  margin-bottom: 4%;
   font-size: 86px;
   color: #6ABEDB;
 }
 
 .workClock{
+  margin: 2%;
+  margin-bottom: 4%;
   font-size: 86px;
   color: #A62139;
 }
 
-.topS{
-  color: #607625;
+.workTimeSettingsControl{
+  display: flex;
+  gap: 2%;
+  justify-content: center;
+  align-items: center;
+}
+
+.breakTimeSettingsControl{
+  display: flex;
+  gap: 2%;
+  justify-content: center;
+  align-items: center;
+}
+
+.workTimeSettingsControl h1{
+  font-size: 42px;
+  color: #A62139;
+}
+
+.breakTimeSettingsControl h1{
+  font-size: 42px;
+  color: #6ABEDB;
+}
+
+.timerTitle{
+  margin-bottom: 0;
+  color:antiquewhite
+}
+
+.settingsTitle{
+  margin-top: 5%;
+  font-size: 24px;
 }
 
 .controlPanel{
