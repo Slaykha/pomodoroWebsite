@@ -10,6 +10,14 @@
   text-align: center;
 }
 
+.settingsToggleButton{
+  margin-left: 90%;
+  position: absolute;
+  border: none;
+  outline: none;
+  animation-delay: 2s;
+}
+
 h1{
   font-size: 42px;
   color: antiquewhite;

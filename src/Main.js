@@ -1,18 +1,29 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import './App.css';
 import Timer from './timer';
 import Settings from './settings';
+import { Icon } from '@iconify/react';
 
 function Main() {
   const [workTime, setWorkTime] = useState(1200);
   const [breakTime, setBreakTime] = useState(300);
   const [seconds, setSeconds] = useState(workTime);
+  const [isSettingsOpen, setIsSettingsOpen] = useState(true);
 
   var secs = parseInt(seconds % 60);
   var mins = parseInt(seconds / 60);
 
+  const setSettingsOpen = () => {
+    setIsSettingsOpen(!isSettingsOpen)
+  }
+
   return (
     <div className="Main">
+      <button className="settingsToggleButton" onClick={()=>setSettingsOpen()}>
+        {isSettingsOpen ?
+        <Icon icon="bxs:toggle-left" color="rgba(250, 235, 215, 0.834)" width="60" height="60" />
+        : <Icon icon="bxs:toggle-right" color="rgba(250, 235, 215, 0.834)" width="60" height="60" />}
+      </button>
       <div className="clock">
         <Timer 
           workTime={workTime}
@@ -24,7 +35,8 @@ function Main() {
         />
       </div>
       <div className="settings">
-        <Settings 
+        {isSettingsOpen
+        && <Settings 
           workTime={workTime}
           setWorkTime={setWorkTime}
           breakTime={breakTime}
@@ -33,7 +45,7 @@ function Main() {
           setSeconds={setSeconds}
           secs={secs}
           mins={mins}
-        />
+        />}
       </div>
     </div>
   );
