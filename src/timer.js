@@ -78,11 +78,11 @@ const Timer = (props) =>{
             </div>
 
             <div className="controlPanel">   
-                <Icon onClick={() => {setPause(true); secondsEdit(workTime); setIsBreakTime(false)}} icon="carbon:reset" color="rgba(250, 235, 215, 0.834)" width="60" height="60" />
+                <Icon className="resetButton" onClick={() => {setPause(true); secondsEdit(workTime); setIsBreakTime(false)}} icon="carbon:reset" color="rgba(250, 235, 215, 0.834)" width="60" height="60" />
                 {isPause ? 
-                <Icon  onClick={() => {isPauseRef.current = !isPause; setIsPause(isPauseRef.current)}} icon="carbon:play-filled-alt" color="rgba(250, 235, 215, 0.834)" width="60" height="60" /> 
-                : <Icon  onClick={() => {isPauseRef.current = !isPause; setIsPause(isPauseRef.current)}} icon="carbon:pause-filled" color="rgba(250, 235, 215, 0.834)" width="60" height="60" />}
-                <Icon onClick={()=>breakT()} icon="carbon:skip-forward-filled" color="rgba(250, 235, 215, 0.834)" width="60" height="60" />
+                <Icon className="startButton" onClick={() => {isPauseRef.current = !isPause; setIsPause(isPauseRef.current)}} icon="carbon:play-filled-alt" color="rgba(250, 235, 215, 0.834)" width="60" height="60" /> 
+                : <Icon className="pauseButton" onClick={() => {isPauseRef.current = !isPause; setIsPause(isPauseRef.current)}} icon="carbon:pause-filled" color="rgba(250, 235, 215, 0.834)" width="60" height="60" />}
+                <Icon className="nextButton" onClick={()=>breakT()} icon="carbon:skip-forward-filled" color="rgba(250, 235, 215, 0.834)" width="60" height="60" />
             </div>
         </div>
     );

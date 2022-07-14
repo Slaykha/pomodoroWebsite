@@ -11,11 +11,7 @@
 }
 
 .settingsToggleButton{
-  margin-left: 90%;
-  position: absolute;
   border: none;
-  outline: none;
-  animation-delay: 2s;
 }
 
 h1{
@@ -48,6 +44,11 @@ h1{
   gap: 2%;
   justify-content: center;
   align-items: center;
+  transition: filter 300ms;
+}
+
+.workTimeSettingsControl:hover{
+    filter: brightness(1.4)
 }
 
 .breakTimeSettingsControl{
@@ -65,6 +66,11 @@ h1{
 .breakTimeSettingsControl h1{
   font-size: 42px;
   color: #6ABEDB;
+  transition: filter 300ms;
+}
+
+.breakTimeSettingsControl:hover{
+    filter: brightness(1.4)
 }
 
 .timerTitle{
@@ -82,4 +88,48 @@ h1{
   gap: 3%;
   justify-content: center;
   align-items: center;
+}
+
+.resetButton{
+  background-color: #282828;
+  border-radius: 50%;
+  padding: 10px;
+  transition: filter 300ms;
+}
+
+.resetButton:hover{
+  filter: brightness(1.4)
+}
+
+.startButton{
+  background-color: #282828;
+  border-radius: 50%;
+  padding: 10px;
+  transition: filter 300ms;
+}
+
+.startButton:hover{
+  filter: brightness(1.4)
+}
+
+.pauseButton{
+  background-color: #282828;
+  border-radius: 50%;
+  padding: 10px;
+  transition: filter 300ms;
+}
+
+.pauseButton:hover{
+  filter: brightness(1.4)
+}
+
+.nextButton{
+  background-color: #282828;
+  border-radius: 50%;
+  padding: 10px;
+  transition: filter 300ms;
+}
+
+.nextButton:hover{
+  filter: brightness(1.4)
 }

@@ -3,6 +3,8 @@ import './App.css';
 import Timer from './timer';
 import Settings from './settings';
 import { Icon } from '@iconify/react';
+import NavItem from './NavItem';
+import DropdownMenu from './DropdownMenu';
 
 function Main() {
   const [workTime, setWorkTime] = useState(1200);
@@ -19,11 +21,20 @@ function Main() {
 
   return (
     <div className="Main">
-      <button className="settingsToggleButton" onClick={()=>setSettingsOpen()}>
-        {isSettingsOpen ?
-        <Icon icon="bxs:toggle-left" color="rgba(250, 235, 215, 0.834)" width="60" height="60" />
-        : <Icon icon="bxs:toggle-right" color="rgba(250, 235, 215, 0.834)" width="60" height="60" />}
-      </button>
+
+      <NavItem icon={<Icon icon="carbon:settings" color="rgba(250, 235, 215, 0.834)" width="30" height="30" />}>
+        <DropdownMenu>
+          <button className="settingsToggleButton" onClick={()=>setSettingsOpen()}>
+            {isSettingsOpen ?
+            <Icon icon="bxs:toggle-left" color="rgba(250, 235, 215, 0.834)" width="60" height="60" />
+            : <Icon icon="bxs:toggle-right" color="rgba(250, 235, 215, 0.834)" width="60" height="60" />}
+          </button>
+          <p>Settings</p>
+        </DropdownMenu>
+      </NavItem>
+
+
+      
       <div className="clock">
         <Timer 
           workTime={workTime}
