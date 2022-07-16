@@ -1,15 +1,10 @@
 import React, { useState } from 'react';
-import './dropdownMenu.css';
+import './Nav.css';
 
 const NavItem = (props) => {
-
-    const [open, setOpen] = useState(false)    
-
     return (
         <li className='navItem'>
-            <a href="#" className='iconButton' onClick={() => setOpen(!open)}>{props.icon}</a>
-
-            {open && props.children}
+            {props.children}
         </li>
     );
 }

@@ -1,5 +1,5 @@
 *{
-  background-color: #282828;
+  background: #282828;
 }
 
 .clock{
@@ -12,6 +12,11 @@
 
 .settingsToggleButton{
   border: none;
+}
+
+.timerTitle{
+  margin: 0;
+  padding-top: 2%;
 }
 
 h1{
