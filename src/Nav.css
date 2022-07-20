@@ -1,11 +1,11 @@
 
 .navItem{
     display: flex;
-    position: absolute;
     border: none;
     outline: none;
     color: antiquewhite;
-    margin-top: 20px;
+    margin-top: 5px;
+    padding-bottom: 5px;
     padding-left: 5%;
     left: 2%;
     width: 100%;
@@ -20,7 +20,7 @@ li{
 .nav {
     background: #282828;
     height: 100vh;
-    padding-top: 60px;
+    padding-top: 5%;
     position: fixed;
     transition: ease .6s;
     width: 0px;

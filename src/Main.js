@@ -11,6 +11,8 @@ function Main() {
   const [breakTime, setBreakTime] = useState(300);
   const [seconds, setSeconds] = useState(workTime);
   const [isSettingsOpen, setIsSettingsOpen] = useState(true);
+  const [images, setImages] = useState([require('./images/leafs.jpg'), require('./images/sands.jpg'), require('./images/stars.jpg'), require('./images/sands2.jpg')])
+  const [backgroundImage, setBackgroundImage] = useState(images[0])
 
   var secs = parseInt(seconds % 60);
   var mins = parseInt(seconds / 60);
@@ -18,21 +20,34 @@ function Main() {
   const setSettingsOpen = () => {
     setIsSettingsOpen(!isSettingsOpen)
   }
-
+  
   return (
-    <div className="Main">
-
-
+    <div className="Main" style={{
+      backgroundImage: "url("+ backgroundImage +")",
+      backgroundRepeat: "no-repeat",
+      backgroundSize: "cover",
+      backgroundPosition: "center"}}>
     <Nav>
       <NavItem>
 
-          <button className="settingsToggleButton" onClick={()=>setSettingsOpen()}>
-            {isSettingsOpen ?
-            <Icon icon="bxs:toggle-left" color="rgba(250, 235, 215, 0.834)" width="60" height="60" />
-            : <Icon icon="bxs:toggle-right" color="rgba(250, 235, 215, 0.834)" width="60" height="60" />}
-          </button>
-          <p>Settings</p>
-  
+        <button className="settingsToggleButton" onClick={()=>setSettingsOpen()}>
+          {isSettingsOpen ?
+          <Icon icon="bxs:toggle-left" color="rgba(250, 235, 215, 0.834)" width="60" height="60" />
+          : <Icon icon="bxs:toggle-right" color="rgba(250, 235, 215, 0.834)" width="60" height="60" />}
+        </button>
+        <p>Settings</p>
+      </NavItem>
+      <NavItem>
+        <img src={images[0]} onClick={() => setBackgroundImage(images[0])}></img> 
+      </NavItem>
+      <NavItem>
+        <img src={images[1]} onClick={() => setBackgroundImage(images[1])}></img> 
+      </NavItem>
+      <NavItem>
+        <img src={images[2]} onClick={() => setBackgroundImage(images[2])}></img> 
+      </NavItem>
+      <NavItem>
+        <img src={images[3]} onClick={() => setBackgroundImage(images[3])}></img> 
       </NavItem>
     </Nav>
      {/* <NavItem icon={<Icon icon="carbon:settings" color="rgba(250, 235, 215, 0.834)" width="30" height="30" />}>
