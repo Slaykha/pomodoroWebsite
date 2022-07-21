@@ -32,14 +32,12 @@ h1{
 
 .breakClock{
   margin: 2%;
-  margin-bottom: 4%;
   font-size: 86px;
   color: #6ABEDB;
 }
 
 .workClock{
   margin: 2%;
-  margin-bottom: 4%;
   font-size: 86px;
   color: #A62139;
 }
@@ -84,7 +82,7 @@ h1{
 }
 
 .settingsTitle{
-  margin-top: 5%;
+  margin-top: 8%;
   font-size: 24px;
 }
 
@@ -143,4 +141,14 @@ img{
   border: 2px solid black;
   border-radius: 10%;
   width: 200px;
+}
+
+.breakClockSettings{
+  margin-top: 1%;
+  margin-bottom: 1%;
+}
+
+.workClockSettings{
+  margin-top: 1%;
+  margin-bottom: 1%;
 }
